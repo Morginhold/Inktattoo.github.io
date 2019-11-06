@@ -1,0 +1,67 @@
+$blockText: rgb(242, 239, 229);
+
+.john-doe{
+    background: url(../img/john-doe-bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 11% 0 3.7%;
+}
+.john-doe-block{
+    margin:0 auto;
+    width: 65%;
+    padding: 0 60px;
+}
+.john-doe-block-text{
+    margin: 0 0 0 0;
+    font-size: 24px;
+    color: $blockText;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center; 
+    position: relative;
+    &::before{
+        content: '';
+        width: 56px;
+        height: 33px;
+        display: block;
+        position: absolute;
+        top: -35px;
+        left: -50px;
+        background: url(../img/john-text-elem-1.png) no-repeat;
+    }
+    &::after{
+        content: '';
+        width: 56px;
+        height: 33px;
+        display: block;
+        position: absolute;
+        bottom: -35px;
+        right: -50px;
+        background: url(../img/john-text-elem-2.png) no-repeat;
+    }
+    @media (min-width: 1500px) {
+        @include dynamicText(150%, 48, 24, 1500px, 3000, 1500);
+    }
+}
+.john-doe-block-author{
+    font-size: 18px;
+    color: $blockText;
+    font-style: italic;
+    line-height: 1.2;
+    text-align: right;   
+    text-transform: uppercase;
+    margin-top: 76px;
+    margin-bottom: 0px;
+    @media (min-width: 1500px) {
+        @include dynamicText(112.5%, 36, 18, 1500px, 3000, 1500);
+    }
+}
+
+@media (max-width: 980px){
+    .john-doe{
+        padding: 100px 0 60px;
+    }
+    .john-doe-block{
+        max-width: 965px;
+    }
+}

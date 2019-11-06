@@ -1,0 +1,18 @@
+﻿@charset "UTF-8";
+
+@import 'normalize';
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+@import 'core';
+
+@import 'font-awesome/font-awesome';
+
+@import 'blocks/header';
+@import 'blocks/about';
+@import 'blocks/john-doe';
+@import 'blocks/team';
+@import 'blocks/twitter';
+@import 'blocks/gallery';
+@import 'blocks/contact';
+@import 'blocks/footer';

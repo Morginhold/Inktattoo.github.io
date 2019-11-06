@@ -1,0 +1,197 @@
+$teamBlockBg: #ccc8b6;
+$colorTextForm: rgba(51, 51, 51, 0.451);
+
+.team{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.team-block{
+    grid-column: span 4;
+    grid-row: span 1;
+    position: relative;
+    &:nth-child(3), &:nth-child(5){
+        background-color: $teamBlockBg;
+        display: flex;
+        align-items: center;
+        &::before{
+            content: '';
+            border-top: 15px solid transparent;
+            border-right: 25px solid $teamBlockBg;
+            border-bottom: 15px solid transparent;
+            display: block;
+            position: absolute;
+            top: 22%;
+            left: -24px;
+        }
+    }
+    &:nth-child(6){
+        background-color: $blockText;
+        display: flex;
+        align-items: center;
+    }
+}
+.title-team-block{
+    @include title-h2();
+}
+.team-block-bg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.team-block-text{
+    margin: 40px 10%;
+}
+.team-text-title{
+    font-size: 24px;
+    color: $black;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10%;
+    @media (min-width: 1500px) {
+        @include dynamicText(150%, 48, 24, 1500px, 3000, 1500);
+    }
+}
+.team-text-text{
+    font-size: 14px;
+    font-family: "Open Sans";
+    color: $black;
+    line-height: 1.2;
+    text-align: left;
+    @media (min-width: 1500px) {
+        @include dynamicText(87.5%, 28, 14, 1500px, 3000, 1500);
+    }
+}
+.social-icons{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10%;
+}
+.soc-icon-link{
+    display: block;
+    margin: 10px 15px 0 0;
+    &:last-child{
+        margin-right: 0;
+    }
+    .fa{
+        font-size: 36px;
+        color: $black;
+        transition: 500ms color;
+        @media (min-width: 1500px) {
+            @include dynamicText(225%, 72, 36, 1500px, 3000, 1500);
+        }
+    }
+    &:hover{
+        .fa{
+            color: $iconLinkActive;
+        }
+    }
+}
+.form-block{
+    margin: 40px 20.4%;
+    flex-basis: 100%;
+}
+.form-text{
+    margin-top: 0;
+    font-size: 12px;
+    color: $black;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: left; 
+    span{
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.5;
+        @media (min-width: 1500px) {
+            @include dynamicText(87.5%, 28, 14, 1500px, 3000, 1500);
+        }
+    }
+    @media (min-width: 1500px) {
+        @include dynamicText(75%, 24, 12, 1500px, 3000, 1500);
+    }
+}
+.form-block-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8.2%;
+}
+.visually-hidden{
+    @include visually-hidden();
+}
+.block-form-email{
+    font-size: 12px;
+    color: $colorTextForm;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    background: transparent;
+    border: 1px solid $black;
+    padding: 5.6% 7%;
+    @media (min-width: 1500px) {
+        @include dynamicText(75%, 24, 12, 1500px, 3000, 1500);
+    }
+}
+.form-button{
+    @include button();
+    margin-top: 7.3%;
+}
+
+@media (max-width: 980px){
+    .team{
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .team-block{
+        &:nth-child(6){
+            grid-row: 1 / 2;
+            grid-column: 5 / -1;
+        }
+        &:nth-child(5){
+            grid-column: 1 / 5;
+            grid-row: 3 / 4;
+            &::before{
+                right: -24px;
+                border-top: 15px solid transparent;
+                border-left: 25px solid $teamBlockBg;
+                border-bottom: 15px solid transparent;
+                border-right: none;
+                left: auto;
+            }
+        }
+    }
+}
+
+@media (max-width: 680px){
+    .team{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .team-block{
+        &:nth-child(6){
+            grid-row: auto;
+            grid-column: span 4;
+        }
+        &:nth-child(5), &:nth-child(3){
+            grid-column: span 4;
+            grid-row: auto;
+            &::before{
+                top: -24px;
+                left: 50%;
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-bottom: 25px solid $teamBlockBg;
+                border-top: none;
+                transform: translateX(-50%);
+                right: auto;
+            }
+        }
+    }
+    .team-block-text{
+        margin: 40px 8.5%;
+    }
+    .form-block{
+        margin: 40px 8.5%;
+    }
+}

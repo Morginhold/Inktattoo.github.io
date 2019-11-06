@@ -1,0 +1,137 @@
+$contactBg: #e7e5d0;
+
+.contact{
+    background-color: $contactBg;
+}
+.contact-blocks{
+    margin: 0 11% 0;
+    padding-top: 8.9%;
+    padding-bottom: 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact-block-left{
+    margin-right: 8.8%;
+    flex-basis: 41.2%;
+    text-align: center;
+}
+.contact-block-right{
+    flex-basis: 50%;
+}
+.contact-title{
+    @include title-h2();
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    white-space: nowrap;
+    display: inline-block;
+}
+.contact-text{
+    font-size: 18px;
+    color: $black;
+    line-height: 1.2;
+    margin-top: 14.5%;
+    @media (min-width: 1500px) {
+        @include dynamicText(112.5%, 36, 18, 1500px, 3000, 1500);
+      }
+}
+.info-work{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 6.1%;
+}
+.info-work-block-left{
+    text-align: left;
+    margin-right: 7.7%;
+    margin-top: 7%;
+}
+.info-block-text{
+    margin: 0;
+    font-size: 16px;
+    color: $black;
+    line-height: 1.2;
+    text-transform: uppercase;
+    span{
+        text-transform: lowercase;
+        font-weight: 700;
+    }
+    @media (min-width: 1500px) {
+        @include dynamicText(100%, 32, 16, 1500px, 3000, 1500);
+      }
+}
+.info-block-text.upper{
+    font-weight: 700;
+    margin-bottom: 6.5%;
+}
+.info-work-block-right{
+    text-align: left;
+    margin-top: 7%;
+    .info-block-text{
+        span{
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+}
+.social-icons.contact{
+    padding: 0 15.7%;
+    margin-top: 22.2%;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    label{
+        @include visually-hidden();
+    }
+    textarea{
+        margin-bottom: 0;
+    }
+}
+.contact-form-input{
+    margin-bottom: 12.7%;
+    font-size: 14px;
+    color: $colorTextForm;
+    text-transform: uppercase;
+    line-height: 1.714;  
+    padding: 4.6% 3.8%;
+    background-color: transparent;
+    border: 2px solid $black;
+    @media (min-width: 1500px) {
+        @include dynamicText(87.5%, 28, 14, 1500px, 3000, 1500);
+      }
+}
+.contact-form-button{
+    @include button();
+    margin-top: 8.5%;
+    width: 78.7%;
+    padding: 6.7% 0;
+    font-size: 16px;
+    @media (min-width: 1500px) {
+        @include dynamicText(100%, 32, 16, 1500px, 3000, 1500);
+      }
+}
+.google-maps{
+    height: 800px;
+    width: 100%;
+}
+
+@media (max-width: 980px){
+    .contact-blocks{
+        margin: 0 5.8%;
+    }
+    .google-maps{
+        height: 600px;
+    }
+}
+
+@media (max-width: 780px){
+    .contact-blocks{
+        display: block;
+        padding: 80px 0 90px;
+    }
+    .contact-block-left{
+        margin: 0 0 12.7% 0;
+    }
+}

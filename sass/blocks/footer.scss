@@ -1,0 +1,35 @@
+$footerBg: #aeaeae;
+
+.footer{
+   background-color: $footerBg; 
+   padding: 11.3% 0 4.5%;
+}
+.footer-menu{
+    position: static;
+    transform: none;
+    display: flex;
+    justify-content: center;
+}
+.footer-text{
+    margin: 7.7% 0 0 0;
+    font-size: 12px;
+    font-family: "Roboto";
+    color: $black;
+    line-height: 1.8;
+    text-align: center;
+    @media (min-width: 1500px) {
+        @include dynamicText(75%, 24, 12, 1500px, 3000, 1500);
+      }
+}
+
+@media (max-width: 780px){
+    .footer-menu{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 580px){
+    .footer {
+        padding: 70px 0 45px;
+    }
+}
